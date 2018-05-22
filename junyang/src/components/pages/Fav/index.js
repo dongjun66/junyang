@@ -4,7 +4,7 @@ import React,{Component} from "react"
  class Fav extends Component{
  	render(){
  		return(
- 			<div className = "email>
+ 			<div className = "fav">
  				Fav
  			</div>
  		)

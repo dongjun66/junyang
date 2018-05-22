@@ -7,7 +7,7 @@ import Shops from './components/pages/Shops'
 import Fav from './components/pages/Fav'
 import Email from './components/pages/Email'
 import Mine from './components/pages/Mine'
-import {connect} from "react-redux"
+//import {connect} from "react-redux"
 class App extends Component {
 	 renderRoutes () {//渲染Route路由的方法
     let { routes } = this.props

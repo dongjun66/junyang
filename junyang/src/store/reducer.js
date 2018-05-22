@@ -1,6 +1,6 @@
-import {combinrRudecers} from "redux"
-import commons  from "./commpns/reducer"
+import {combineReducers} from "redux"
+import commons  from "./commons/reducer"
 
-const reducer = combineRuducers({commons})
+const reducer = combineReducers({commons})
 
 export default reducer

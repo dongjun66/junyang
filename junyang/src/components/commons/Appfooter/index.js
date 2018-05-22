@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import {NavLink} from "react-router-dom"
+import "./index.scss"
 
 const NavItem = ({item}) =>{
 	return (
@@ -27,11 +28,11 @@ class Footer extends Component {
 }
 Footer.defaultProps = {
 	navs:[
-		{id:1,icon:"",title:'下厨房',path:'/'},
-		{id:2,icon:"",title:'市集',path:'/shops'},
-		{id:3,icon:"",title:'收藏',path:'/fav'},
-		{id:4,icon:"",title:'信箱',path:'/email'},
-		{id:5,icon:"",title:'我',path:'/mine'}
+		{id:1,icon:"home",title:'下厨房',path:'/'},
+		{id:2,icon:"university",title:'市集',path:'/shops'},
+		{id:3,icon:"heart-o",title:'收藏',path:'/fav'},
+		{id:4,icon:"envelope-o",title:'信箱',path:'/email'},
+		{id:5,icon:"user-o",title:'我',path:'/mine'}
 	]
 }
 export default Footer

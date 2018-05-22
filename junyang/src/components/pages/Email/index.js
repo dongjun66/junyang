@@ -4,7 +4,7 @@ import React,{Component} from "react"
  class Email extends Component{
  	render(){
  		return(
- 			<div className = "email>
+ 			<div className = "email">
  				Email
  			</div>
  		)
