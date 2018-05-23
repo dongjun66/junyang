@@ -5,7 +5,16 @@ import React,{Component} from "react"
  	render(){
  		return(
  			<div className = "shops">
- 				Shops
+ 				<Header />
+ 			</div>
+ 		)
+ 	}
+ }
+ class Header extends Component{
+ 	render(){
+ 		return (
+ 			<div>
+ 				哎哟喂
  			</div>
  		)
  	}
