@@ -1,14 +1,13 @@
 {
-  "name": "junyang",
+  "name": "pro",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "async": "^2.6.1",
     "autoprefixer": "7.1.6",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
-    "babel-loader": "7.1.2",
+    "babel-loader": "^7.1.2",
     "babel-preset-react-app": "^3.1.1",
     "babel-runtime": "6.26.0",
     "case-sensitive-paths-webpack-plugin": "2.1.1",
@@ -41,11 +40,8 @@
     "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "resolve": "1.6.0",
-    "source-list-map": "^2.0.0",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
-    "swiper": "^4.2.6",
-    "tapable": "^1.0.0",
     "url-loader": "0.6.2",
     "webpack": "3.8.1",
     "webpack-dev-server": "2.9.4",
@@ -100,11 +96,9 @@
     "extends": "react-app"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
+    "babel-loader": "^7.1.4",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1"
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC"
+  }
 }

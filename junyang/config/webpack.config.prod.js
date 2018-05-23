@@ -212,7 +212,7 @@ module.exports = {
             ),
             // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
           },
-                    {
+          {
             test: /\.scss$/,
             use: [
               require.resolve('style-loader'),
@@ -242,7 +242,7 @@ module.exports = {
                   ],
                 },
               },
-               require.resolve('sass-loader')
+               require.resolve('sass-loader'),
             ],
           },
           // "file" loader makes sure assets end up in the `build` folder.
