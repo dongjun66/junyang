@@ -5,6 +5,7 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import store from "./store"
 import {Provider} from "react-redux"
+//import "swiper/dist/css/swiper.min.css"
 
 import {BrowserRouter as Router} from "react-router-dom"
 import "./module/rem.css"
