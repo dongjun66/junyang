@@ -1,6 +1,7 @@
 import React,{Component} from "react"
  import "./index.scss"
-// import swiper from "swiper"
+   import Swiper from "swiper"
+   import axios from "axios"
  class Home extends Component{
  	render(){
  		return(
@@ -64,6 +65,8 @@ import React,{Component} from "react"
  					<Nav/>
  					<Case/>
  					<Banner/>
+ 					<Article/>
+ 					<News/>
  				</div>
  			</section>
  		)
@@ -72,7 +75,7 @@ import React,{Component} from "react"
  
  
  //Case
- class Case extends Component{
+ class  Case extends Component{
  	render(){
  		return(
  			<div className="case">
@@ -84,17 +87,118 @@ import React,{Component} from "react"
  }
 
 //banner
-class Banner extends Component{
-	render(){
+class Banner extends Component {
 
-		return(
-			<div></div>
-			
-		)
+    constructor (props) {
+        super(props)
+        this.state = {
+            banners: []
+        }
+    }
 
-			}
-	}
- 
+    getBanners () {//获取焦点数据之后进行更新
+        axios.get('/mz/v4/api/billboard/home', {
+            params: {__t: Date.now()}
+        }).then (res => {
+            console.log(res.data.data.billboards)
+            this.setState({banners: res.data.data.billboards})
+            //在vue中，当上一次的数据更新引起的dom的重新渲染完成后，Vue.nextTick里面的回调函数会执行
+            // Vue.nextTick (() => {
+            //     //实例化swiper
+            // })
+            
+            setTimeout(() => {
+                new Swiper(this.el, {
+                    scrollbar: {el: '.swiper-scrollbar'}
+                })
+            }, 0);
+        })
+    }
+
+    componentWillMount () {
+        //我一般情况下会将初始化数据获取放在willMount里，但是大家知道，和放在DidMount里效果一样
+        //注意alibaba一直是放入到DidMount
+        this.getBanners()
+
+    }
+
+    renderSlide () {
+        let { banners } = this.state
+        if (!banners.length) return (<div className="swiper-wrapper"></div>)
+
+        return (
+            <div className="swiper-wrapper">
+                {
+                    banners.map(item => {
+                        return (
+                            <div key = {item.id} className="swiper-slide">
+                                <div className="img-box img-loading">
+                                    <img width="100%" src={item.imageUrl} alt=""/>
+                                </div>
+                            </div>
+                        )
+                    })
+                }
+            </div>
+        )
+    }
+
+    render () {
+        return (
+            <div ref = {el => this.el = el} className="swiper-container">
+                {this.renderSlide()}
+                <div className="swiper-scrollbar"></div>
+            </div>
+        )
+    }
+
+    componentDidUpdate () {
+        // new Swiper(this.el, {
+        //     pagination: {el: '.swiper-pagination'}
+        // })
+    }
+       componentDidMount () {
+           //在这里实例的话，页面中有0个swiper-slide
+//         new Swiper(this.el, {
+//             pagination: {el: '.swiper-scrollbar',draggable: true,}
+//         })
+       }
+}
+ //article
+ class  Article extends Component{
+ 	render(){
+ 		return(
+ 			<article>
+ 				<img src={require("../../../assets/images/act.gif")} alt=""/>
+ 				<img src={require("../../../assets/images/act2.gif")} alt=""/>
+ 			</article>
+ 		)
+ 	}
+ }
+ //news
+ class News extends Component{
+ 	render(){
+ 		return(
+ 			<div className="news">
+ 				<h2><span>生鲜料理包</span><i>查看全部</i></h2>
+ 				<div className="box">
+ 					<div>
+ 							<img src={require("../../../assets/images/new.gif")} alt=""/>
+ 							<span>香茅土豆三杯鸡</span>
+ 					</div>
+ 					<div>
+ 							<img src={require("../../../assets/images/new.gif")} alt=""/>
+ 							<span>香茅土豆三杯鸡</span>
+ 					</div>
+ 					<div>
+ 							<img src={require("../../../assets/images/new.gif")} alt=""/>
+ 							<span>香茅土豆三杯鸡</span>
+ 					</div>
+ 				</div>
+ 			</div>
+ 		)
+ 	}
+ }
  //footer
  class Footer extends Component{
  	render(){
