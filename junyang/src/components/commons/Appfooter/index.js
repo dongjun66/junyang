@@ -4,7 +4,7 @@ import "./index.scss"
 
 const NavItem = ({item}) =>{
 	return (
-		<NavLink exact to={{pathname:item.path}} className="active">
+		<NavLink exact to={{pathname:item.path}}>
 			<i className={"fa fa-"+item.icon}></i>
 			<span>{item.title}</span>
 		</NavLink>

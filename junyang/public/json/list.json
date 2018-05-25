@@ -1,0 +1,17 @@
+{
+	"List1":[
+		{"id":1,"title":"出口级鲜杨梅3斤","price":79,"origin":108,"src":"list1.png","sale":1},
+		{"id":2,"title":"英国进口啵乐趣爆米花2袋","price":45.8,"origin":59.6,"src":"list2.png","sale":3},
+		{"id":3,"title":"茉香绿妍散装花茶125g","price":9.9,"origin":19.9,"src":"list9.png","sale":27}
+	],
+	"List2":[
+		{"id":4,"title":"冷泡奶萃咖啡送冷萃杯","price":51.6,"origin":86,"src":"list6.png","sale":23},
+		{"id":5,"title":"红藜麦牛轧糖夹心饼干","price":45.8,"origin":59.6,"src":"list7.png","sale":36},
+		{"id":6,"title":"手工红薯粉条3斤","price":19.9,"origin":29,"src":"list8.png","sale":231}
+	],
+	"List3":[
+		{"id":7,"title":"新疆低温冷藏酸奶 9杯","price":45,"origin":65,"src":"list3.png","sale":11},
+		{"id":8,"title":"汉美驰家用全自动汉堡机","price":188,"origin":299,"src":"list4.png","sale":77},
+		{"id":9,"title":"鸡西爽口汤冷面 3包","price":25.06,"origin":35.8,"src":"list5.png","sale":2}
+	]
+}

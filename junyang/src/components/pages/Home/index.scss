@@ -1,5 +1,13 @@
+.head{
+    height:1.9rem;
+}
 header{
     height:1.9rem;
+    z-index: 999999;
+    position: fixed;
+    top:0;
+    width:100%;
+    background:#fff; 
     border-bottom:1px solid #ccc;
     display: flex;
     justify-content: space-between;
@@ -33,28 +41,104 @@ nav{
         flex-direction: column;
         align-items: center;
         img{
-            width:0.4rem;
-            height:0.4rem;
+            width:0.8rem;
+            height:0.8rem;
         }
         span{
-            font-size:0.16rem;
+            font-size:0.32rem;
             color:#767674;
-            margin-top:0.22rem; 
+            margin-top:0.44rem; 
         }
     }
 }
 
 //case
 .case{
-    height:1.9rem;
+    height:3.8rem;
     width:100%;
     display: flex;
     justify-content: space-between;
-    padding: 0.2rem 0.2rem;
+    padding: 0.4rem 0.4rem;
     img{
         width: 48%;
         height: 97%;
         
         
     }
+}
+//section
+section{
+    width:100%;
+    flex:1;
+    overflow: hidden;
+    }
+
+//footer
+.foot{
+    height:1.72rem;
+}
+section .swiper-wrapper{
+    width:100%;
+    height:3.75rem;
+    background:#ccc;
+    div{
+        width:100%;
+        height:100px;
+        text-align: center;
+        line-height:3.75rem;
+    }
+}
+article{
+    width:100%;
+    
+    
+    img:nth-child(1){
+        width:100%;
+        height:2.96rem;
+    }
+    img:nth-child(2){
+        width:100%;
+        height:3.05rem;
+        margin-top:0.3rem;
+       }
+}
+.news{
+    height:8.5rem;
+    display: flex;
+    flex-direction: column;   
+    h2{
+        height:2.12rem;
+        width:100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size:0.48rem;
+        i{
+            color:#000;
+        }
+        span{
+            color:#95958f;
+        }
+    }
+   .box{
+//      background:#ccc;
+        overflow: auto;
+        height:6.13rem;
+        text-align: center;
+        display: flex;
+        div{
+            height:100%;
+//          border: 1px solid #000;
+            margin-left:0.3rem;
+            img{
+                width:4.61rem;
+                height:4.63rem;
+            }
+            span{
+                font-size:0.48rem;
+                display: inline-block;
+                color:#383835;
+            }
+        }
+   }
 }

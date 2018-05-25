@@ -1,17 +1,20 @@
 .app-footer{
-        height: 0.85rem;
+        height: 1.7rem;
         border:1px solid #fff;
         display: flex;
-        font-size:0.18rem;
+        font-size:0.36rem;
         justify-content: space-between;
         align-items: center;
-        padding: 0 0.26rem;
+        padding: 0 0.52rem;
          position: fixed;
+         background:#fff;
            bottom: 0;
            left: 0;
            width:100%;
            border-top:1px solid #ccc;
-       
+        .active{
+            color:#fa6650;
+        }
        a{
         font-family: "楷体";
            flex-direction: column;
@@ -20,11 +23,11 @@
             justify-content: center;
             align-content: center;
             i{
-                font-size: 0.28rem ;
+                font-size: 0.56rem ;
                 margin:0 auto;
             }
             span{
-                margin-top:0.1rem;
+                margin-top:0.2rem;
                 text-align: center;
             }
  
