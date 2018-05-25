@@ -12,9 +12,9 @@ class Shop_list extends Component{
 	getInfo(){
 		let {type} = this.props
 		let url="";
-		if(type=="new"){
+		if(type==="new"){
 			url="list2.json";
-		}else if(type == "jingdian"){
+		}else if(type === "jingdian"){
 			url="list3.json"
 		}
 		axios.get("/json/"+url).then(({data})=>{

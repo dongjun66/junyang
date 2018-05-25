@@ -100,7 +100,6 @@ class Banner extends Component {
         axios.get('/mz/v4/api/billboard/home', {
             params: {__t: Date.now()}
         }).then (res => {
-            console.log(res.data.data.billboards)
             this.setState({banners: res.data.data.billboards})
             //在vue中，当上一次的数据更新引起的dom的重新渲染完成后，Vue.nextTick里面的回调函数会执行
             // Vue.nextTick (() => {
@@ -180,7 +179,6 @@ class Banner extends Component {
    	
  	render(){
  		let {news}= this.props
-   		console.log(news)
  		return(
  			<div className="news">
  				<h2><span>生鲜料理包</span><i>查看全部</i></h2>

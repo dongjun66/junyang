@@ -5,7 +5,6 @@ import List2 from "../../commons/list2"
  class Shops extends Component{
  	render(){
  		let {navs} = this.props
- 		console.log(navs)
  		return(
  			<div className = "shops">
  				<Header />

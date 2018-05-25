@@ -13,7 +13,6 @@ class New_list extends Component{
 	getInfo(){
 		axios.get("/json/list.json").then(({data})=>{
 			this.setState({List1:data.List1,List2:data.List2,List3:data.List3})
-			console.log(data.List1)
 		})
 		
 	}
