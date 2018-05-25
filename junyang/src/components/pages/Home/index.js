@@ -177,28 +177,36 @@ class Banner extends Component {
  }
  //news
  class News extends Component{
+   	
  	render(){
+ 		let {news}= this.props
+   		console.log(news)
  		return(
  			<div className="news">
  				<h2><span>生鲜料理包</span><i>查看全部</i></h2>
  				<div className="box">
- 					<div>
- 							<img src={require("../../../assets/images/new.gif")} alt=""/>
- 							<span>香茅土豆三杯鸡</span>
- 					</div>
- 					<div>
- 							<img src={require("../../../assets/images/new.gif")} alt=""/>
- 							<span>香茅土豆三杯鸡</span>
- 					</div>
- 					<div>
- 							<img src={require("../../../assets/images/new.gif")} alt=""/>
- 							<span>香茅土豆三杯鸡</span>
- 					</div>
+ 					{
+ 						news.map(item=>{
+ 							return(
+		 						<div key={item.id}>
+		 							<img src={require("../../../assets/images/"+item.Ourl)} alt=""/>
+		 							<span>{item.title}</span>
+		 						</div>
+ 							)
+ 						}) 					}
  				</div>
  			</div>
  		)
  	}
  }
+   News.defaultProps = {
+   	news:[
+   		{id:1,Ourl:"new.gif",title:"香茅土豆三杯鸡"},
+   		{id:2,Ourl:"new2.gif",title:"大肉炖白菜"},
+   		{id:3,Ourl:"new.gif",title:"小鸡炖蘑菇"},
+   		{id:4,Ourl:"new2.gif",title:"你觉得是啥"}
+   	]
+   }
  //footer
  class Footer extends Component{
  	render(){
