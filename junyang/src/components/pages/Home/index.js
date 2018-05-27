@@ -94,12 +94,16 @@ class Banner extends Component {
         this.state = {
             banners: []
         }
+        this.ismount = true
     }
-
+	componentWillUnmount(){
+		this.ismount = false
+	}
     getBanners () {//获取焦点数据之后进行更新
         axios.get('/mz/v4/api/billboard/home', {
             params: {__t: Date.now()}
         }).then (res => {
+        	if(!this.ismount) return false;
             this.setState({banners: res.data.data.billboards})
             //在vue中，当上一次的数据更新引起的dom的重新渲染完成后，Vue.nextTick里面的回调函数会执行
             // Vue.nextTick (() => {

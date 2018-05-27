@@ -1,39 +1,29 @@
 import React,{Component} from "react"
- import "./index.scss"
- import Longin from "../../commons/loginoption"
-  
- class Email extends Component{
- 	render(){
- 		return(
- 		<div className = "email">
- 			<Emailtop/>
- 			<Emailcontent/>
- 			<Longin/>
- 			</div>
- 		)
- 	}
- }
- //top
- class Emailtop extends Component{
- 	render(){
- 		return(
- 			
- 				<div className="Email-header">
- 					<i className="fa fa-location-arrow"></i>
- 					<span>信箱</span>
- 				</div>
- 		)
- 	}
- }
- //content
- class Emailcontent extends Component{
+import Emaillogin from "./login"
+import Emailuser from "./user"
+import {Route,Switch} from "react-router-dom"
+import {connect} from "react-redux"
+class Email extends Component {
+	componentWillMount(){
+		let {history} = this.props
+		if(this.props.userinfo){
+			history.replace("/email/user")
+		}else{
+			history.replace("/email/login")
+		}
+
+	}
 	render(){
 		return(
-			<div className="Email-content">
-				<h2>你有一个小信箱</h2>
-				<h3>美味调剂生活 订阅你最喜欢的美食栏目 将会在这里收到最高人气菜谱和美文</h3>
+			<div>
+				<Switch>
+					<Route path="/email/login" exact component={Emaillogin} />
+					<Route path="/email/user" exact component={Emailuser} />
+				</Switch>
 			</div>
-		)	
+			
+		)
 	}
 }
- export default Email
+
+export default connect(state=>state.commons)(Email)

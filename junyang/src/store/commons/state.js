@@ -1,4 +1,4 @@
 const state = {
-	num:1
+	userinfo:null
 }
 export default state
